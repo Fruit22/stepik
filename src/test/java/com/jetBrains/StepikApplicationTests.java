@@ -19,14 +19,12 @@ public class StepikApplicationTests {
 		long start = System.nanoTime();
 		lessonDao.getSteps(1);
 		long end = System.nanoTime();
-		long time = end - start;
-		System.out.println("Time of the first request: " + time);
+		System.out.println("Time of the first request: " + (end - start));
 
 		start = System.nanoTime();
 		lessonDao.getSteps(1);
 		end = System.nanoTime();
-		time = end - start;
-		System.out.println("Time of the second request: " + time);
+		System.out.println("Time of the second request: " + (end - start));
 	}
 
 }
