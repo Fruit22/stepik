@@ -3,7 +3,7 @@ package com.jetBrains.dao;
 import java.io.IOException;
 
 /**
- * Created by fruit on 09.05.2017.
+ * Промежуточный слой для получения данных в формате JSON при взаимодействии со Stepik API
  */
 public interface LessonDao {
 

@@ -3,11 +3,11 @@ package com.jetBrains.model;
 import java.util.List;
 
 public class Lesson {
-    private int Id;
+    private int id;
     private List<Integer> stepsId;
 
     public Lesson(int lessonId, List<Integer> stepsId) {
-        this.Id = lessonId;
+        this.id = lessonId;
         this.stepsId = stepsId;
     }
 
