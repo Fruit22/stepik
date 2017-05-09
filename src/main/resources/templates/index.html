@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head lang="en">
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="/vendor/css/bootstrap.min.css"/>
-    <title>Title</title>
+    <script src="/vendor/js/jquery-3.1.1.min.js"></script>
+    <title>Stepik</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="page-header">
-                <h1>Создание системы для перевода текстов на платформе Stepik.</h1>
-                <h3>Тестовое задание.</h3>
-            </div>
-
-            <h3><span class="label label-primary">Введите номер урока</span></h3>
-            <div class="input-group input-group-sm">
-                <input type="text" class="form-control" id="basic-url"/>
-            </div>
-            <br/>
-            <button class="btn btn-primary" id="btn">GET запрос</button>
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h1>Создание системы для перевода текстов на платформе Stepik.</h1>
+            <h3>Тестовое задание.</h3>
         </div>
+
+        <h3><span class="label label-primary">Введите номер урока</span></h3>
+        <div class="input-group input-group-sm">
+            <input type="text" class="form-control" id="lessonId"/>
+        </div>
+        <br/>
+        <button class="btn btn-primary" id="btn" onclick="redirect()">GET запрос</button>
+        <script type="text/javascript">
+            function redirect() {
+                var lessonId = document.getElementById('lessonId').value;
+                window.location = "/lessons=" + lessonId;
+            }
+        </script>
     </div>
+</div>
 </body>
 </html>
