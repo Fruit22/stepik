@@ -22,7 +22,7 @@ public class LessonDaoImpl implements LessonDao {
     ObjectMapper mapper;
 
     @Autowired
-    LessonBuilder builder;
+    LessonBuilder lessonBuilder;
 
     @Override
     @Cacheable("lessons")
@@ -32,7 +32,7 @@ public class LessonDaoImpl implements LessonDao {
             URL url = new URL("https://stepik.org/api/lessons/" + id);
             jsonNode = mapper.readValue(url, JsonNode.class).get("lessons")
                     .get(0).get("steps");
-            Lesson lesson = builder.setId(id).build();
+            Lesson lesson = lessonBuilder.build();
             for (JsonNode step : jsonNode) {
                 lesson.addStep(step.asInt());
             }

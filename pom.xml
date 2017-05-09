@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>stepik</name>
-	<description>Demo project for Spring Boot</description>
+	<description>test task</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -39,11 +39,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin.external.google</groupId>
-			<artifactId>android-json</artifactId>
-			<version>0.0.20131108.vaadin1</version>
 		</dependency>
 	</dependencies>
 
