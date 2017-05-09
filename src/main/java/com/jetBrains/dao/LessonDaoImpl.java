@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jetBrains.model.Lesson;
-import com.jetBrains.model.LessonBuilder;
+import com.jetBrains.model.LessonSimpleBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ public class LessonDaoImpl implements LessonDao {
     ObjectMapper mapper;
 
     @Autowired
-    LessonBuilder lessonBuilder;
+    LessonSimpleBuilder lessonSimpleBuilder;
 
     @Override
     @Cacheable("lessons")
@@ -32,7 +32,7 @@ public class LessonDaoImpl implements LessonDao {
             URL url = new URL("https://stepik.org/api/lessons/" + id);
             jsonNode = mapper.readValue(url, JsonNode.class).get("lessons")
                     .get(0).get("steps");
-            Lesson lesson = lessonBuilder.build();
+            Lesson lesson = lessonSimpleBuilder.build();
             for (JsonNode step : jsonNode) {
                 lesson.addStep(step.asInt());
             }

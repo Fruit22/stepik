@@ -1,15 +1,10 @@
 package com.jetBrains.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lesson {
-    private int id;
-    private List<Integer> stepsId;
-
-    public Lesson(int lessonId, List<Integer> stepsId) {
-        this.id = lessonId;
-        this.stepsId = stepsId;
-    }
+    private List<Integer> stepsId = new ArrayList<>();
 
     public List<Integer> getSteps() {
         return stepsId;
