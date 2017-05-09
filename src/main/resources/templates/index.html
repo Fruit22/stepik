@@ -14,12 +14,13 @@
             <h3>Тестовое задание.</h3>
         </div>
 
-        <h3><span class="label label-primary">Введите номер урока</span></h3>
-        <div class="input-group input-group-sm">
+        <h3><span class="label label-primary">Создание GET запроса</span></h3>
+        <div class="col-sm-2 input-group input-group-sm">
+            <span class="input-group-addon">/lessons=</span>
             <input type="text" class="form-control" id="lessonId"/>
         </div>
         <br/>
-        <button class="btn btn-primary" id="btn" onclick="redirect()">GET запрос</button>
+        <button class="btn btn-primary" id="btn" onclick="redirect()">Выполнить GET запрос</button>
         <script type="text/javascript">
             function redirect() {
                 var lessonId = document.getElementById('lessonId').value;
